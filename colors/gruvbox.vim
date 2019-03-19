@@ -461,7 +461,7 @@ call s:HL('GruvboxAquaSign', s:aqua, s:sign_column, s:invert_signs)
 " General UI: {{{
 
 " Normal text
-call s:HL('Normal', s:fg1, s:bg0)
+call s:HL('Normal', s:fg1, s:none)
 
 " Correct background (see issue #7):
 " --- Problem with changing between dark and light on 256 color terminal
@@ -573,8 +573,8 @@ else
 endif
 
 call s:HL('Comment', s:gray, s:none, s:italicize_comments)
-call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
-call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
+call s:HL('Todo', s:vim_fg, s:none, s:bold . s:italic)
+call s:HL('Error', s:red, s:none, s:bold . s:inverse)
 
 " Generic statement
 hi! link Statement GruvboxRed
@@ -700,11 +700,11 @@ endif
 
 if g:indent_guides_auto_colors == 0
   if g:gruvbox_invert_indent_guides == 0
-    call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2)
-    call s:HL('IndentGuidesEven', s:vim_bg, s:bg1)
+    call s:HL('IndentGuidesOdd', s:none, s:bg2)
+    call s:HL('IndentGuidesEven', s:none, s:bg1)
   else
-    call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2, s:inverse)
-    call s:HL('IndentGuidesEven', s:vim_bg, s:bg3, s:inverse)
+    call s:HL('IndentGuidesOdd', s:none, s:bg2, s:inverse)
+    call s:HL('IndentGuidesEven', s:none, s:bg3, s:inverse)
   endif
 endif
 
@@ -919,14 +919,14 @@ call s:HL('htmlLink', s:fg4, s:none, s:underline)
 
 hi! link htmlSpecialChar GruvboxOrange
 
-call s:HL('htmlBold', s:vim_fg, s:vim_bg, s:bold)
-call s:HL('htmlBoldUnderline', s:vim_fg, s:vim_bg, s:bold . s:underline)
-call s:HL('htmlBoldItalic', s:vim_fg, s:vim_bg, s:bold . s:italic)
-call s:HL('htmlBoldUnderlineItalic', s:vim_fg, s:vim_bg, s:bold . s:underline . s:italic)
+call s:HL('htmlBold', s:vim_fg, s:none, s:bold)
+call s:HL('htmlBoldUnderline', s:vim_fg, s:none, s:bold . s:underline)
+call s:HL('htmlBoldItalic', s:vim_fg, s:none, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:vim_fg, s:none, s:bold . s:underline . s:italic)
 
-call s:HL('htmlUnderline', s:vim_fg, s:vim_bg, s:underline)
-call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
-call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
+call s:HL('htmlUnderline', s:vim_fg, s:none, s:underline)
+call s:HL('htmlUnderlineItalic', s:vim_fg, s:none, s:underline . s:italic)
+call s:HL('htmlItalic', s:vim_fg, s:none, s:italic)
 
 " }}}
 " Xml: {{{
